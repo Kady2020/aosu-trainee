@@ -8,3 +8,5 @@ import "./modules/header-scroll.js";
 import "./modules/select-tabs.js";
 // import "./modules/custom-select.js"; Custom Select
 // import "./modules/choices-select.js"; Choices Select
+import "./modules/checkbox.js"
+import "./modules/radio-button.js"
