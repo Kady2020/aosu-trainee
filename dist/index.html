@@ -12,6 +12,7 @@
   <!-- <meta name="keywords" content=""> -->
   <!-- <meta name="description" content=""> -->
   <link rel="stylesheet" href="css/main.min.css">
+
   <link rel="shortcut icon" href="img/shortcut.svg">
 </head>
 
@@ -43,7 +44,7 @@
           </li>
         </ul>
       </nav>
-      <button class="header__auth popup btn" type="button">
+      <button class="header__auth popup btn" type="button" easy-toggle="#modal_1" easy-class="show" easy-rcoe>
         <span>Авторизация</span>
       </button>
       <button class="header__burger burger" type="button">
@@ -89,53 +90,62 @@
 
           <div class="select-content__item select-content__item_form select-content__item_active">
             <form action="#" class="select-content__form" method="get">
-              <div class="section-content__form-box">
-                <label for="name">String type</label>
-                <input id="name" type="text" name="username" value="" placeholder="Имя пользователя" autocomplete="on">
+              <div class="select-content__form-box select-content__form-box_text">
+                <label for="name">Имя</label>
+                <input id="name" type="text" name="username" value="Иванов Иван Иванович" placeholder="Имя пользователя"
+                  disabled>
               </div>
-              <div class="section-content__form-box">
-                <label for="number">Number type</label>
-                <input id="number" type="number" name="usernumber" value="" placeholder="Номер пользователя"
+              <div class="select-content__form-box select-content__form-box_numb">
+                <label for="number">Табельный номер</label>
+                <input id="number" type="number" name="usernumber" placeholder="Номер пользователя" autocomplete="on"
+                  maxlength="10">
+              </div>
+              <div class="select-content__form-box select-content__form-box_phone">
+                <label for="phone">Номер телефона</label>
+                <input id="phone" type="tel" name="userphone" value="+7" placeholder="Телефон пользователя"
                   autocomplete="on">
               </div>
-              <div class="section-content__form-box">
-                <label for="phone">Phone number</label>
-                <input id="phone" type="tel" name="userphone" value="" placeholder="Телефон пользователя"
-                  autocomplete="on">
+              <div class="select-content__form-box select-content__form-box_email">
+                <label for="email">E-mail</label>
+                <input id="email" type="email" name="useremail" value="@aosu.ru" placeholder="Эл. почта пользователя"
+                  autocomplete="on" required>
               </div>
-              <div class="section-content__form-box">
-                <label for="email">Phone number</label>
-                <input id="email" type="email" name="useremail" value="" placeholder="Эл. почта пользователя"
-                  autocomplete="on">
+              <div class="select-content__form-box select-content__form-box_date">
+                <label for="date">Дата рождения</label>
+                <input id="date" type="date" name="userdate">
               </div>
-              <div class="section-content__form-box">
-                <label for="date">Phone number</label>
-                <input id="date" type="date" name="userdate" value="" placeholder="" autocomplete="of">
-              </div>
-              <div class="section-content__form-box">
-                <div class="section-content__checkbox">
+              <div class="select-content__form-box">
+                <div class="select-content__checkbox">
                   <label for="checkbox">Checkbox</label>
-                  <input id="checkbox" type="checkbox" name="checkbox-1" checked>
+                  <input id="checkbox" type="checkbox" name="checkbox-1" checked required>
                 </div>
               </div>
-              <ul class="section-content__form-box">
-                <li class="section-content__radio">
+              <ul class="select-content__form-box">
+                <li class="select-content__radio">
                   <input type="radio" name="radiobutton" value="1" checked>
                   <p href="#">Radio Button</p>
                 </li>
-                <li class="section-content__radio">
+                <li class="select-content__radio">
                   <input type="radio" name="radiobutton" value="2">
                   <p href="#">Radio button</p>
                 </li>
-                <li class="section-content__radio">
+                <li class="select-content__radio">
                   <input type="radio" name="radiobutton" value="3">
                   <p href="#">Radio button</p>
                 </li>
-                <li class="section-content__radio">
-                  <input type="radio" name="radiobutton" value="4">
-                  <p href="#">Radio button</p>
-                </li>
               </ul>
+              <div class="select-content__form-box select-content__form-box_about-text">
+                <textarea name="text"></textarea>
+              </div>
+              <div class="select-content__form-box select-content__form-box_file">
+                <label for="file">Прикрепить файл</label>
+                <input id="file" type="file" name="userfile" accesskey=".jpg, .png" multiple>
+              </div>
+              <div class="select-content__form-box select-content__form-box_pass">
+                <label for="pass">Введите пароль</label>
+                <input id="pass" type="password" name="userpass" placeholder="Пароль">
+              </div>
+              <button class="select-content__button btn" type="submit">Отправить</button>
             </form>
           </div>
 
@@ -150,7 +160,7 @@
             <div></div>
           </div>
 
-          <div class="select-content__item select-content__item_content text">
+          <div class="select-content__item text">
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam labore excepturi exercitationem! Aut quo fuga
               recusandae.
@@ -185,6 +195,19 @@
 
 
   </div>
+
+  <!-- !Modal -->
+  <div id="modal_1" class="ey-modal">
+    <button class="ey-modal__bg-close" easy-remove="#modal_1" easy-class="show">Закрыть (фон)</button>
+    <div class="ey-modal__dialog ey-modal__dialog_centered">
+      <h3 class="ey-modal__dialog-title">Модальное окно!</h3>
+      <p class="ey-modal__dialog-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Expedita reiciendis,
+        earum
+        cupiditate obcaecati vel in vitae officia nihil praesentium id, quod quasi repellat maxime fugiat eos ipsa.
+        Consectetur, aperiam dignissimos!</p>
+    </div>
+  </div>
+  <!-- !Modal -->
 
   <!-- IONICONS -->
   <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>

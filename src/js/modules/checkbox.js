@@ -1,10 +1,10 @@
 $(document).ready(function () {
-  $.each($('.section-content__checkbox'), function (index, val) {
+  $.each($('.select-content__checkbox'), function (index, val) {
     if ($(this).find('input').prop('checked') == true) {
       $(this).addClass('active');
     }
   });
-  $(document).on('click', '.section-content__checkbox', function (event) {
+  $(document).on('click', '.select-content__checkbox', function (event) {
     if ($(this).hasClass('active')) {
       $(this).find('input').prop('checked', false);
     } else {
