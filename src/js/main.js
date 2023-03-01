@@ -11,3 +11,4 @@ import "./modules/select-tabs.js";
 import "./modules/checkbox.js";
 import "./modules/radio-button.js";
 import "./modules/modal.js";
+import "./modules/select-scroll.js";
