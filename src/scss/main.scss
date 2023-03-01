@@ -137,10 +137,6 @@ body {
   }
 }
 
-//! Popup
-.popup {
-}
-
 //! Buttons
 .btn {
   display: inline-block;
@@ -579,7 +575,25 @@ body {
     }
   }
 
-  &__radio {
+  &__button {
+    justify-self: start;
+  }
+}
+
+.select-content__item_active.select-content__item_grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 10px;
+
+  div {
+    background: #333;
+    border-radius: 3px;
+    height: 250px;
+  }
+}
+
+.radio {
+  &__item {
     position: relative;
     cursor: pointer;
 
@@ -591,7 +605,8 @@ body {
       display: none;
     }
 
-    p {
+    label {
+      display: block;
       padding: 0 0 0 50px;
       transition: all 0.2s linear;
       font-size: 20px;
@@ -624,7 +639,7 @@ body {
     }
 
     &.active {
-      p {
+      label {
         color: #2879d0;
       }
 
@@ -633,86 +648,42 @@ body {
       }
     }
   }
-
-  &__button {
-    justify-self: start;
-  }
 }
 
-.select-content__item_active.select-content__item_grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 10px;
-
-  div {
-    background: #333;
-    border-radius: 3px;
-    height: 250px;
-  }
-}
-
-//! Modal
-.ey-modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 0.19s ease-in-out;
-  z-index: 100;
-
-  visibility: hidden;
-  opacity: 0;
-
-  &:before {
-    content: '';
-    position: fixed;
-    z-index: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(#000, 0.5);
+.modal-body {
+  &__form {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 50px;
   }
 
-  &__dialog {
-    background-color: #fff;
-    box-shadow: 0 10px 20px rgba(#000, 0.4);
-    display: inline-block;
-    width: 480px;
-    max-width: 90%;
-    border-radius: 5px;
-    transition: inherit;
-    text-align: center;
-    padding: 20px 10px;
-    z-index: 101;
-    transform: translateY(40px);
+  &__form-item {
+    display: grid;
+    grid-auto-flow: row;
+    gap: 15px;
 
-    &-title {
-      font-size: 24px;
+    label {
+      font-size: 20px;
+      position: relative;
+      justify-self: start;
+
+      &::before {
+        content: '*';
+        position: absolute;
+        top: -10px;
+        right: -10px;
+        font-size: 30px;
+        color: red;
+      }
     }
 
-    &-text {
-      line-height: 1.6;
-    }
+    input {
+      box-shadow: 0 0 3px 0 #000;
+      border-radius: 5px;
+      padding: 20px;
 
-    &__bg-close {
-      position: fixed;
-      z-index: 1;
-      height: 100vh;
-      width: 100%;
-      left: 0;
-      top: 0;
-      opacity: 0;
-    }
-
-    &.show {
-      opacity: 1;
-      visibility: visible;
-
-      .ey-modal__dialog {
-        transform: translateY(0);
+      &:focus {
+        box-shadow: 0 0 5px 1px #3d96f4;
       }
     }
   }
