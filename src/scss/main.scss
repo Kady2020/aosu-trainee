@@ -219,7 +219,7 @@ body {
     &::before {
       top: 0;
       background: #f5f5f5;
-      box-shadow: 0 0 3px 0.5px #070707;
+      // box-shadow: 0 0 3px 0.5px #070707;
     }
   }
 
@@ -424,15 +424,48 @@ body {
     &.scroll-form {
       position: fixed;
       width: 100%;
-      height: 100%;
-      top: 30px;
+      padding: 10px 0;
+      top: 110px;
       left: 0;
+      background: #fff;
+      box-shadow: 0 0px 7px 0 #000;
+
+      .form__header-content {
+        display: none;
+      }
+
+      .form__select {
+        max-width: 500px;
+      }
+
+      .form__btn {
+        max-width: 250px;
+      }
+
+      .form__item {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 15px;
+
+        > *:not(:last-child) {
+          margin: 0;
+        }
+      }
     }
   }
 }
 
 /*==================== SELECT CONTENT ====================*/
 .select-content {
+  @media (min-width: 991.98px) {
+    &_scroll {
+      padding: 150px 0 0 0;
+    }
+  }
+
   &__container {
   }
 

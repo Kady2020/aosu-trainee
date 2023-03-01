@@ -299,8 +299,6 @@ body {
 .header.scroll::before {
   top: 0;
   background: #f5f5f5;
-  -webkit-box-shadow: 0 0 3px 0.5px #070707;
-          box-shadow: 0 0 3px 0.5px #070707;
 }
 
 .header__body {
@@ -669,9 +667,45 @@ body {
   .form.scroll-form {
     position: fixed;
     width: 100%;
-    height: 100%;
-    top: 30px;
+    padding: 10px 0;
+    top: 110px;
     left: 0;
+    background: #fff;
+    -webkit-box-shadow: 0 0px 7px 0 #000;
+            box-shadow: 0 0px 7px 0 #000;
+  }
+
+  .form.scroll-form .form__header-content {
+    display: none;
+  }
+
+  .form.scroll-form .form__select {
+    max-width: 500px;
+  }
+
+  .form.scroll-form .form__btn {
+    max-width: 250px;
+  }
+
+  .form.scroll-form .form__item {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    gap: 15px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+
+  .form.scroll-form .form__item > *:not(:last-child) {
+    margin: 0;
+  }
+
+  .select-content_scroll {
+    padding: 150px 0 0 0;
   }
 }
 
